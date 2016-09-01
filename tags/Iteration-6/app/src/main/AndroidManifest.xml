@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="uiuc.mbr"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+	<uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+	<uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+	<uses-permission android:name="android.permission.READ_CALENDAR"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+	<application
+		android:allowBackup="true"
+		android:icon="@drawable/icon"
+		android:label="@string/app_name"
+		android:theme="@style/AppTheme"
+		android:supportsRtl="false">
+		<activity
+			android:name=".activities.StartActivity"
+			android:label="@string/app_name"
+			android:theme="@style/AppTheme.NoActionBar">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+
+		<!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+
+		<meta-data
+			android:name="com.google.android.geo.API_KEY"
+			android:value="@string/google_maps_key"/>
+
+		<activity
+			android:name=".activities.MapActivity"
+			android:label="@string/title_activity_map"
+			android:parentActivityName=".activities.NavigationMenuActivity">
+		</activity>
+
+		<activity
+			android:name=".activities.GetStopsActivity"
+			android:label="GetStops"
+			android:theme="@style/AppTheme.NoActionBar"
+			android:parentActivityName=".activities.NavigationMenuActivity">
+		</activity>
+
+		<activity
+			android:name=".activities.StopListActivity"
+			android:label="StopList"
+			android:theme="@style/AppTheme.NoActionBar"
+			android:parentActivityName=".activities.NavigationMenuActivity">
+		</activity>
+
+		<activity android:name=".activities.OnAlarmActivity"
+			android:parentActivityName=".activities.AlarmsMenuActivity">
+		</activity>
+
+        <activity android:name=".activities.SettingsActivity"
+			android:parentActivityName=".activities.StartActivity">
+		</activity>
+
+		<activity
+			android:name=".activities.EventSelectionActivity"
+			android:parentActivityName=".activities.EventsMenuActivity">
+		</activity>
+		<activity
+			android:name=".activities.CalendarSelectionActivity"
+			android:parentActivityName=".activities.EventsMenuActivity">
+		</activity>
+		<activity
+			android:name=".activities.AddressBookActivity"
+			android:parentActivityName=".activities.EventsMenuActivity">
+		</activity>
+		<activity android:name=".activities.NavigationMenuActivity"
+			android:parentActivityName=".activities.StartActivity">
+		</activity>
+		<activity android:name=".activities.EventsMenuActivity"
+			android:parentActivityName=".activities.StartActivity">
+		</activity>
+		<activity android:name=".activities.AlarmsMenuActivity"
+			android:parentActivityName=".activities.StartActivity">
+		</activity>
+
+		<!--
+             ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
+        -->
+		<meta-data
+			android:name="com.google.android.gms.version"
+			android:value="@integer/google_play_services_version"/>
+
+		<service android:name=".alarm.AlarmService"/>
+
+		<activity android:name=".activities.GotoActivity"/>
+	</application>
+
+</manifest>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    android:gravity="center_horizontal">
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/get_stop_button"
+        android:text="Get Stop"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:background="@drawable/buttons"
+        android:textColor="#f5f5f5"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:onClick="clickStpBtn" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/go_to_button"
+        android:text="Quick Go To"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/get_stop_button"
+        android:background="@drawable/buttons"
+        android:textColor="#f5f5f5"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:onClick="clickQuickGotoVtn" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/map_button"
+        android:text="Map it up"
+        android:layout_above="@id/get_stop_button"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/buttons"
+        android:textColor="#f5f5f5"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
+        android:onClick="clickMapBtn" />
+
+
+</RelativeLayout>
